@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #009600;
+}
+#root {
+  height: 90vh;
+}
+.chat {
+  width: 520px;
+  border: solid 1px #eee;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 520px;
+}
+
+.message {
+  border-radius: 25px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  font-size: 18px;
+  transition: width 0.3s ease-in-out;
+}
+
+.yours {
+  align-items: flex-start;
+}
+
+.yours .message {
+  max-width: 520px;
+  background-color: #fff;
+  position: relative;
+}
+
+.yours .message.last:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: -7px;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  border-bottom-right-radius: 15px;
+}
+.yours .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: -10px;
+  width: 10px;
+  height: 20px;
+  background: #009600;
+  border-bottom-right-radius: 10px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background-color: rgba($color: #000000, $alpha: 1);
+  animation: blink 1s infinite;
+  transform: translate(0, 2px);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
