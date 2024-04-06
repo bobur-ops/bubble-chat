@@ -22,7 +22,7 @@ const App = () => {
           setNewMessage("");
           setTimeout(() => {
             setMessages((prev) => prev.filter((msg) => msg.id !== newId));
-          }, 5000);
+          }, 12000);
           break;
         case "Backspace":
           setNewMessage((prev) => prev.slice(0, -1));
