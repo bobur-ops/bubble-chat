@@ -20,9 +20,9 @@ const App = () => {
           const newId = generateRandomId();
           setMessages((prev) => [...prev, { value: newMessage, id: newId }]);
           setNewMessage("");
-          setTimeout(() => {
-            setMessages((prev) => prev.filter((msg) => msg.id !== newId));
-          }, 12000);
+          // setTimeout(() => {
+          //   setMessages((prev) => prev.filter((msg) => msg.id !== newId));
+          // }, 12000);
           break;
         case "Backspace":
           setNewMessage((prev) => prev.slice(0, -1));
@@ -71,7 +71,7 @@ const App = () => {
           ))}
         </AnimatePresence>
       </div>
-      <div className="yours messages" style={{ marginTop: 0, height: 48 }}>
+      <div className="yours messages" style={{ marginTop: 0, height: "auto" }}>
         <AnimatePresence>
           {newMessage && (
             <motion.div
