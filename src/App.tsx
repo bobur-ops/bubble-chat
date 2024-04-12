@@ -20,9 +20,9 @@ const App = () => {
           const newId = generateRandomId();
           setMessages((prev) => [...prev, { value: newMessage, id: newId }]);
           setNewMessage("");
-          // setTimeout(() => {
-          //   setMessages((prev) => prev.filter((msg) => msg.id !== newId));
-          // }, 12000);
+          setTimeout(() => {
+            setMessages((prev) => prev.filter((msg) => msg.id !== newId));
+          }, 12000);
           break;
         case "Backspace":
           setNewMessage((prev) => prev.slice(0, -1));
